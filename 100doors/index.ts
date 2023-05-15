@@ -35,5 +35,4 @@ function getDoors(doors: string[]): void {
 
 getDoors(doors);
 
-module.exports = {firstPassResult, secondPassResult, thirdPassResult, openDoor, closedDoor};
-export {};
+export {firstPassResult, secondPassResult, thirdPassResult, openDoor, closedDoor};

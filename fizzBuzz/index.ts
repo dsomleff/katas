@@ -14,4 +14,4 @@ function fizzBuzz(num: number): void {
 
 fizzBuzz(50);
 
-module.exports = {fizzBuzz};
+export default fizzBuzz;

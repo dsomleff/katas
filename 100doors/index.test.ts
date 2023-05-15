@@ -1,4 +1,4 @@
-const { firstPassResult, secondPassResult, thirdPassResult, openDoor, closedDoor} = require('./index');
+import { firstPassResult, secondPassResult, thirdPassResult, openDoor, closedDoor} from './index';
 
 const dataToCompareThirdResult = '#@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@###@@@';
 
