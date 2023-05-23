@@ -2,14 +2,14 @@ import CaesarCipher from "./index";
 
 describe('Caesar Cipher', () => {
     it('should encrypt the string', () => {
-        const crypto = new CaesarCipher('XYZ', 1);
+        const crypto = new CaesarCipher('xyz', 3);
 
-        expect(crypto.encrypt()).toEqual('ABC')
+        expect(crypto.encrypt()).toEqual('abc')
     });
 
     it('should decrypt the string', () => {
-        const crypto = new CaesarCipher('ABC', 3);
+        const crypto = new CaesarCipher('abc', 3);
 
-        expect(crypto.decrypt()).toEqual('DEF');
+        expect(crypto.decrypt()).toEqual('xyz');
     });
 });

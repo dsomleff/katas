@@ -1,24 +1,60 @@
 interface Crypto {
-    str: string;
-    num: number;
+    text: string;
+    steps: number;
+    result: string[];
     encrypt(): string;
     decrypt(): string;
 }
 
 class CaesarCipher {
-    constructor(public str: string, public num: number) {}
+    constructor(public text: string, public steps: number, public result: string[] = []) {}
 
     encrypt(): string {
-        return this.str;
+        let cypherText = '';
+
+        for (let i = 0; i < this.text.length; i++) {
+            let charToEncrypt = this.text.charAt(i).toLowerCase();
+            let replaceVal = ' ';
+
+            if (charToEncrypt !== ' ') {
+                let x = alphabet.indexOf(charToEncrypt);
+                let keyVal = (this.steps + x) % alphabet.length;
+                replaceVal = alphabet.charAt(keyVal);
+            }
+            cypherText +=replaceVal;
+        }
+
+        return cypherText;
     }
 
     decrypt(): string {
-        return this.str;
+        let cypherText = '';
+
+        for (let i = 0; i < this.text.length; i++) {
+            let charToDecrypt = this.text.charAt(i).toLowerCase();
+            let replaceVal = ' ';
+
+            if (charToDecrypt !== ' ') {
+                let x = alphabet.indexOf(charToDecrypt);
+                let keyVal = (x - this.steps) % alphabet.length;
+
+                if (keyVal < 0) {
+                    keyVal = alphabet.length + keyVal;
+                }
+                replaceVal = alphabet.charAt(keyVal);
+            }
+            cypherText +=replaceVal;
+        }
+
+        return cypherText;
     }
 }
 
+let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 const crypto: Crypto = new CaesarCipher('zoo keeper', 2);
-crypto.encrypt();// 'bqq mggrgt'
-crypto.decrypt();
+console.log(crypto.encrypt());
+
+const deCrypto: Crypto = new CaesarCipher('bqq mggrgt', 2);
+console.log(deCrypto.decrypt());
 
 export default CaesarCipher;
