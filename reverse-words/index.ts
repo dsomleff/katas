@@ -18,4 +18,6 @@ function reverseWords(line: string) {
 console.log(reverseWords('this is a string of words'));
 // siht si a gnirts fo sdrow
 
+export default reverseWords;
+
 
