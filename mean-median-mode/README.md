@@ -11,10 +11,11 @@ function meanMedianMode(arr) {
     getMode(arr);
 }
 
-function getMean(arr) {// logic to calculate Mean}
-function getMedian(arr) {// logic to calculate Median}
-function getMode(arr){// logic to calculate Mode}
+function getMean(arr) {} // logic to calculate Mean
+function getMedian(arr) {} // logic to calculate Median
+function getMode(arr){} // logic to calculate Mode
 
+/ ** Expected Output*/
 meanMedianMode([1,2,3,4,5,4,6,1]);
 {
     mean: 3.25
