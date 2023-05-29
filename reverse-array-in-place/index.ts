@@ -11,6 +11,7 @@ function reverseArrayInPlace(arr: number[]) {
         arr.shift();
         arr.splice(arr.length - index, 0, element);
     });
+
     return arr;
 }
 
