@@ -1,4 +1,4 @@
-function reverseArrayInPlace(arr: number[]) {
+function reverseArrayInPlace(arr: number[]): number[] {
     let element = 0;
 
     arr.forEach((value, index) => {

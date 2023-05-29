@@ -6,7 +6,7 @@ function meanMedianMode(arr) {
         median: 'median of all numbers in the array'
         mode: 'mode of all numbers in the array'
     }
-    getMode(arr);
+    getMean(arr);
     getMedian(arr);
     getMode(arr);
 }
