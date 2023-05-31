@@ -1,4 +1,3 @@
-// logic to calculate Mean
 function getMean(arr: number[]) {
     let sum = 0;
 
@@ -9,23 +8,38 @@ function getMean(arr: number[]) {
     return sum / arr.length;
 }
 
-// logic to calculate Median
-function getMedian(arr: number[]) {}
+function getMedian(arr: number[]) {
+    arr.sort((a, b) => a - b);
+    console.log(arr);
+    let median;
+
+    if (arr.length % 2 === 0) {
+        let middleIndex = Math.floor(arr.length / 2);
+        console.log(middleIndex);
+        median = (arr[middleIndex] + arr[middleIndex - 1]) / 2;
+    } else {
+        let middleIndex = Math.floor(arr.length / 2);
+        median = arr[middleIndex]
+    }
+
+    return median;
+}
 
 // logic to calculate Mode
 function getMode(arr: number[]){}
 
 function meanMedianMode(arr: number[]): object {
     const mean = getMean(arr);
-    getMedian(arr);
+    const median = getMedian(arr);
     getMode(arr);
 
     return {
-        mean
+        mean,
+        median,
     }
 }
 
-console.log(meanMedianMode([1,2,3,4,5,4,6,1]));
+console.log(meanMedianMode([3,4,6,7,8,9]));
 
 // meanMedianMode([1,2,3,4,5,4,6,1]);
 // {
