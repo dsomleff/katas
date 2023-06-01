@@ -55,3 +55,4 @@ console.log(meanMedianMode([9, 10, 23, 10, 23, 9]));
 //     median: 10
 //     mode: [9, 10, 23]
 // }
+export default meanMedianMode;

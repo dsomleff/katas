@@ -20,13 +20,13 @@ meanMedianMode([1,2,3,4,5,4,6,1]);
 {
     mean: 3.25
     median: 3.5
-    mode: ['1', '4']
+    mode: [1, 4]
 }
 
 meanMedianMode([9, 10, 23, 10, 23, 9]);
 {
     mean: 14
     median: 10
-    mode: []
+    mode: [9, 10, 23]
 }
 ```
