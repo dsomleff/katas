@@ -1,28 +1,7 @@
-/**
- * O(n^{2}) solution
- */
-function twoSumOn2(numArr: number[], num: number): [number, number][] {
-    let element: number;
-    let res = new Map();
-
-    for (let i = 0; i < numArr.length; i++) {
-        element = numArr[i];
-        for (let j = 1; j < numArr.length; j++) {
-            if (element + numArr[j] === num) {
-                res.set(element, numArr[j]);
-            }
-        }
-    }
-    return Array.from(res);
-}
-
-/**
- * Recursion solution
- */
-function twoSumRecursion(numArr: number[], num: number, res: [number, number][] | undefined = []) {
+export function twoSum(numArr: number[], num: number, res: [number, number][] = []): [number, number][]  {
     if (res === undefined) res = [];
-
     if (numArr.length <= 0) return res;
+
     const firstElement = numArr.shift();
 
     for (let i = 0; i < numArr.length; i++) {
@@ -31,14 +10,12 @@ function twoSumRecursion(numArr: number[], num: number, res: [number, number][] 
         }
     }
 
-    twoSumRecursion(numArr, num, res);
+    twoSum(numArr, num, res);
 
     return res;
 }
 
 const numArr = [1, 6, 4, 5, 3, 3];
-console.log(twoSumOn2(numArr, 7)); // [[6,1], [3, 4], [3, 4]]
+console.log(twoSum(numArr, 7)); // [ [ 1, 6 ], [ 4, 3 ], [ 4, 3 ] ]
 const numArr2 = [40, 11, 19, 17, -12];
-console.log(twoSumRecursion(numArr2, 28)); // [[17, 11], [-12, 40]]
-
-
+console.log(twoSum(numArr2, 28)); // [ [ 40, -12 ], [ 11, 17 ] ]
