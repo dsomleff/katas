@@ -9,7 +9,7 @@ function getMean(arr: number[]): number {
 }
 
 function getMedian(arr: number[]): number {
-    arr.sort((a, b) => a - b);
+    arr.sort((a, z) => a - z);
     let median;
 
     if (arr.length % 2 === 0) {
