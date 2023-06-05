@@ -6,7 +6,7 @@ interface Crypto {
     decrypt(): string;
 }
 
-class CaesarCipher {
+class CaesarCipher implements Crypto{
     constructor(public text: string, public steps: number, public result: string[] = []) {}
 
     encrypt(): string {
@@ -51,10 +51,10 @@ class CaesarCipher {
 }
 
 let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-const crypto: Crypto = new CaesarCipher('zoo keeper', 2);
+const crypto = new CaesarCipher('zoo keeper', 2);
 console.log(crypto.encrypt());
 
-const deCrypto: Crypto = new CaesarCipher('bqq mggrgt', 2);
+const deCrypto = new CaesarCipher('bqq mggrgt', 2);
 console.log(deCrypto.decrypt());
 
 export default CaesarCipher;
