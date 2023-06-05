@@ -1,0 +1,3 @@
+ - Create a Dynamic Array that could be limited by size.
+ - contains `set, get, insert, delete(first, middle, last)`. 
+- All functionality must be implemented without build in array.methods.  
