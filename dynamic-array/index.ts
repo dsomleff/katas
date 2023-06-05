@@ -4,7 +4,7 @@ interface DA {
     initialCapacity: number,
     set(index: number, value: string): string,
     get(index: number): string,
-    insert(index: number, value: string): any,
+    insert(index: number, value: string): string,
 }
 export class DynamicArray implements DA{
     public readonly data: string[];
@@ -25,13 +25,14 @@ export class DynamicArray implements DA{
         return this.data[index];
     }
 
-    insert(index: number, value: string): any {
+    insert(index: number, value: string): string {
         if (!this.data[index]) return this.set(index, value);
 
-        for (let i = this.data.length - 1; i >= index; i--) {
+        for (let i = this.size - 1; i >= index; i--) {
             this.data[i + 1] = this.data[i];
         }
-        this.set(index, value);
+
+        return this.set(index, value);
     }
 }
 
