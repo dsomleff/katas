@@ -24,4 +24,16 @@ describe('Dynamic da', function () {
         expect(da.get(2)).toBe('b');
         expect(da.get(3)).toBe('c');
     });
+
+    it('should delete value of specific index', () => {
+        da.set(0, "a");
+        da.set(1, "b");
+        da.set(2, "c");
+
+        da.delete(1);
+
+        expect(da.size).toBe(2);
+        expect(da.get(0)).toBe('a');
+        expect(da.get(1)).toBe('c');
+    });
 });
