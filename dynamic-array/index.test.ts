@@ -4,7 +4,7 @@ describe('Dynamic da', function () {
     let da: DynamicArray;
 
     beforeEach(() => {
-        da = new DynamicArray(4);
+        da = new DynamicArray(2);
     });
 
     it('should get and set values', () => {
@@ -35,5 +35,11 @@ describe('Dynamic da', function () {
         expect(da.size).toBe(2);
         expect(da.get(0)).toBe('a');
         expect(da.get(1)).toBe('c');
+    });
+
+    it('should show is empty data array or not', () => {
+        expect(da.isEmpty()).toBe(true);
+        da.set(0, 'a');
+        expect(da.isEmpty()).toBe(false);
     });
 });

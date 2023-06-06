@@ -6,6 +6,7 @@ interface DA {
     get(index: number): string,
     insert(index: number, value: string): string,
     delete(index: number): string[],
+    isEmpty(): boolean,
 }
 export class DynamicArray implements DA{
     public readonly data: string[];
@@ -48,6 +49,10 @@ export class DynamicArray implements DA{
 
         return this.data;
     }
+
+    isEmpty(): boolean {
+        return this.size === 0;
+    }
 }
 
 const da = new DynamicArray(2);
@@ -56,5 +61,6 @@ da.set(1, 'c');
 da.set(2, 'd');
 da.insert(1, 'b');
 da.delete(1);
+da.isEmpty();
 console.log(da);
 
