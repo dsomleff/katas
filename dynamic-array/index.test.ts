@@ -42,4 +42,11 @@ describe('Dynamic da', function () {
         da.set(0, 'a');
         expect(da.isEmpty()).toBe(false);
     });
+
+    it('should show if data contains a value', () => {
+        expect(da.contains('a')).toBe(false);
+        da.set(0, 'a');
+        expect(da.contains('a')).toBe(true);
+        expect(da.contains('f')).toBe(false);
+    });
 });
