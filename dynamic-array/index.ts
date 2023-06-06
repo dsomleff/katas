@@ -7,7 +7,7 @@ interface DA {
     insert(index: number, value: string): string,
     delete(index: number): string[],
     isEmpty(): boolean,
-    contains(value: string): boolean | undefined,
+    contains(value: string): boolean,
 }
 export class DynamicArray implements DA{
     public readonly data: string[];
@@ -55,12 +55,15 @@ export class DynamicArray implements DA{
         return this.size === 0;
     }
 
-    contains(value: string): boolean | undefined {
+    contains(value: string): boolean {
        if (this.size === 0) return false;
+       let isContain = true;
 
         for (let i = 0; i < this.size; i++) {
-            return this.data[i] === value;
+            isContain = this.data[i] === value;
         }
+
+        return isContain;
     }
 }
 
