@@ -1,11 +1,10 @@
 function binarySearch(haystack: number[], needle: number): boolean {
-    const sortedHaystack = haystack.sort((a, z) => a - z);
     let low = 0;
-    let high = sortedHaystack.length;
+    let high = haystack.length;
 
     do {
         const midIndex = Math.floor(low + (high - low) / 2);
-        let value = sortedHaystack[midIndex];
+        let value = haystack[midIndex];
 
         if (value === needle) {
             return true;
@@ -19,7 +18,7 @@ function binarySearch(haystack: number[], needle: number): boolean {
     }
 }
 
-const haystack = [5, 7, 2, 16, 36, 39, 42, 56, 71];
+const haystack = [5, 7, 12, 16, 36, 39, 42, 56, 71];
 const needle = 56;
 
 console.log(binarySearch(haystack, needle));
