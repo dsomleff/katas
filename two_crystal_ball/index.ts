@@ -1,4 +1,4 @@
-function ball_problem(floors: boolean[]): number {
+export default function ball_problem(floors: boolean[]): number {
    const jump = Math.floor(Math.sqrt(floors.length));
    let i = jump;
 
