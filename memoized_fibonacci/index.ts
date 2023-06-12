@@ -1,13 +1,13 @@
-export default function fibMemo(index: number, cache?: number[]): number {
-    cache = cache || [];
+let memo: number[] = [];
 
-    if (cache[index]) return cache[index];
-
+export default function fibMemo(index: number): number {
     if (index < 2) return index;
 
-    cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache);
+    if (memo[index] === undefined) {
+        memo[index] = fibMemo(index - 1) + fibMemo(index - 2);
+    }
 
-    return cache[index];
+    return memo[index];
 }
 
 console.log(fibMemo(4))
